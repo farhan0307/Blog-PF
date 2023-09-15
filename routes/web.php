@@ -21,3 +21,6 @@ Route::get('user',[UserController::class , 'welcome']);
 Route::get('/guest', function () {
     $guest = Post::all();
 });
+// Route::get('/', function () {
+//     return view('welcome');
+// });
