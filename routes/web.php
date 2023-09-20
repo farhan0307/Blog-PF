@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\API\SuperadminController;
 use App\Models\Guest;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
@@ -15,12 +14,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/login',[SuperadminController::class,'index']);
-Route::get('/register',[SuperadminController::class,'register']);
-Route::get('user',[UserController::class , 'welcome']);
-Route::get('/guest', function () {
-    $guest = Post::all();
+
+Route::get('/', function () {
+    return view('welcome');
+//   return response()->json([
+//     'stuff' => phpinfo()
+//    ]);
 });
-// Route::get('/', function () {
-//     return view('welcome');
-// });
